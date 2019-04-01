@@ -7,7 +7,8 @@
 	
 	![](https://ws4.sinaimg.cn/large/006tKfTcgy1g1jp8ox7cfj30t60ten3j.jpg)
 
-#block的变量捕获
+
+# block的变量捕获
 
 - block的变量捕获
 
@@ -64,7 +65,7 @@
 		@end
 		```
 
-#block 的类型
+# block 的类型
 
 - block 的类型
 
@@ -79,7 +80,7 @@
 	|__ NSMallocBlock __| __ NSStackBlock __调用了copy操作之后|堆|引用技术增加|
 	注：[关于OC存储区域堆栈内存的区别](https://www.jianshu.com/p/c8e1d91dda99)
 
-#block 的copy操作
+# block 的copy操作
 
 - 在ARC环境下，编译器会根据情况自动将栈上的block复制到堆上，比如以下几种情况：
 	- block作为函数返回值时
@@ -92,7 +93,7 @@
 	@property(copym, nonatomic) void(^block)(void);
 	```
 
-#block对象类型的auto变量
+# block对象类型的auto变量
 
 - 当block内部访问了**对象类型的auto变量时**
 	
@@ -112,7 +113,7 @@
 
 > 答案是**不会**，因为在ARC环境下会自动对block进行copy操作，从栈拷贝到堆上，而person对象的默认修饰符是__strong ,auto，所以block会对person对象形成强引用，执行到26行的时候，block未被释放，所以person对象也不会释放。
 
-#__block修饰符
+# __block修饰符
 
 ## __block的作用
 
@@ -122,12 +123,12 @@ __block不能修饰全局变量、静态变量（staitc）
 
 ![](https://ws2.sinaimg.cn/large/006tKfTcgy1g1n6su4p42j31mc0sgwop.jpg)
 
-##__block的内存管理
+## __block的内存管理
 
 - 当block在栈上时，不会对__blcok变量产生强引用，所以无需进行内存管理。
 - 当block被拷贝到堆上时，会对__block变量形成强引用；当block从堆上移除时会执行block内部的dispose函数，从而释放引用的变量。
 
-#block的循环引用问题
+# block的循环引用问题
 
 ## 造成循环引用的原因
 > block持有外部对象，外部对象持有block，导致双方都无法释放，造成内存泄漏。
@@ -144,7 +145,7 @@ __block不能修饰全局变量、静态变量（staitc）
 ![](https://ws4.sinaimg.cn/large/006tKfTcgy1g1n7ojzno4j31jk09mqal.jpg)
 
 
-#相关面试题
+# 相关面试题
 
 - block的本质是什么，原理是怎样的？
 
