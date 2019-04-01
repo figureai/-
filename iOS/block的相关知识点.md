@@ -1,11 +1,14 @@
 [TOC]
+
 # block的本质是什么
+
 - block的本质是什么
 	> Block本质是一个**封装了函数调用以及函数调用环境的OC对象**，Block转换成C++代码之后是一个结构体，结构体中存在一个isa指针。内存如下图：
 	
 	![](https://ws4.sinaimg.cn/large/006tKfTcgy1g1jp8ox7cfj30t60ten3j.jpg)
 
 #block的变量捕获
+
 - block的变量捕获
 
 	|变量类型|捕获到block内部|访问方式|
@@ -62,6 +65,7 @@
 		```
 
 #block 的类型
+
 - block 的类型
 
 	
@@ -138,6 +142,7 @@ __block不能修饰全局变量、静态变量（staitc）
 - 使用__block解决(只能调用一次block，因为第二次调用的时候person对象已经被置空)
 
 ![](https://ws4.sinaimg.cn/large/006tKfTcgy1g1n7ojzno4j31jk09mqal.jpg)
+
 
 #相关面试题
 
